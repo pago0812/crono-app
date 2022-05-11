@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Crono app
+          Dame todo tu amor pony
         </h1>
       </main>
     </div>
