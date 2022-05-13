@@ -1,3 +1,4 @@
-import {AppPropsWithLayout,NextPageWithLayout} from './next-page-with-layout';
+import {AppLayoutProps ,PageWithLayoutType} from './layout';
+import {User} from './user'
 
-export type {AppPropsWithLayout,NextPageWithLayout};
+export type {AppLayoutProps, PageWithLayoutType,User};

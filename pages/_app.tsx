@@ -1,8 +1,14 @@
-import { AppPropsWithLayout } from "../interfaces";
+import { AppLayoutProps } from "../interfaces";
+import type { ReactElement } from "react";
 
-export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page);
-
-  return getLayout(<Component {...pageProps} />);
+function MyApp({ Component, pageProps }: AppLayoutProps) {
+  const Layout =
+    Component.layout || ((children: ReactElement) => <>{children}</>);
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
+
+export default MyApp;

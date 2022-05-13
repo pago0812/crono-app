@@ -1,13 +1,13 @@
-import * as React from "react";
+import React, { FC } from "react";
 import type { ReactElement } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Button from "@mui/material/Button";
 
-import { NextPageWithLayout } from "../interfaces";
+import { PageWithLayoutType } from "../interfaces";
 import { UserLayout } from "../components/";
 
-const Page: NextPageWithLayout = () => {
+const Page: FC = () => {
   return (
     <div>
       <Head>
@@ -19,8 +19,6 @@ const Page: NextPageWithLayout = () => {
   );
 };
 
-Page.getLayout = function getLayout(page: ReactElement) {
-  return <UserLayout>{page}</UserLayout>;
-};
+(Page as PageWithLayoutType).layout = UserLayout;
 
 export default Page;
