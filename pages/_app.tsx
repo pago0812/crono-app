@@ -1,9 +1,10 @@
+import React, { FC } from "react";
 import { AppLayoutProps } from "../interfaces";
-import type { ReactElement } from "react";
+
+const noLayout: FC = ({ children }) => <>{children}</>;
 
 function MyApp({ Component, pageProps }: AppLayoutProps) {
-  const Layout =
-    Component.layout || ((children: ReactElement) => <>{children}</>);
+  const Layout = Component.layout || noLayout;
   return (
     <Layout>
       <Component {...pageProps} />

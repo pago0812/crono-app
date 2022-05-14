@@ -1,4 +1,4 @@
-import type { ReactElement, ReactNode } from "react";
+import type { FC, ReactElement, ReactNode } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export const OrganizerLayout = ({ children }: { children: ReactNode }) => {
+export const OrganizerLayout: FC = ({ children }) => {
   return (
     <>
       <Box sx={{ height: "48px" }}>
